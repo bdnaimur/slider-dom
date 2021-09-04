@@ -5,6 +5,8 @@ let slideIndex = 0;
         const displayImages = document.querySelector('.image');
         const imagesSection = document.querySelector('.images-sliderInput');
         const slideContainer = document.querySelector('.slides');
+        const duration = document.querySelector('#duration');
+        duration
         const handleSearchFormSubmit = (e) =>{
             e.preventDefault();
             displayImages.innerHTML = '';
@@ -62,11 +64,12 @@ let slideIndex = 0;
             })
             changeSlide(0);
             console.log("print or not");
+            const durationValue = duration.value || 1500;
             timer = setInterval(() => {
             console.log("inside print or not");
                 slideIndex++;
                 changeSlide(slideIndex);
-            }, 2000);
+            }, durationValue);
         }
         function changeSlide(index) {
             console.log("above Index",index);
